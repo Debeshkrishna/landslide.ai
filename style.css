@@ -1,0 +1,160 @@
+/* Sticky Top Bar */
+.topbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: #2c3e50;
+  color: #fff;
+  //display: none; /* hidden until login */
+  justify-content: space-between;
+  
+  padding: 10px 20px;
+  z-index: 1000;
+}
+
+.topbar h1 {
+  font-size: 28px;
+  align-items: center;
+  margin: 0;
+}
+
+.topbar button {
+  background: #e74c3c;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  color: #fff;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.topbar button:hover {
+  background: #c0392b;
+}
+/* style.css */
+
+/* General page styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f6f9;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Centered container */
+#loginBox, #dashboard {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Headings */
+h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+/* Input fields */
+input[type="email"], input[type="password"] {
+  width: 90%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+/* Buttons */
+button {
+  width: 90%;
+  padding: 12px;
+  background: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #2980b9;
+}
+
+/* Chart canvas */
+canvas {
+  margin-top: 20px;
+  width: 100% !important;
+  height: 400px !important;
+}
+
+/* Alerts (optional styling for push logs) */
+.alert-log {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.alert-safe {
+  background: #e0f7e9;
+  color: #2e7d32;
+}
+
+.alert-warning {
+  background: #fff9c4;
+  color: #f57f17;
+}
+
+.alert-danger {
+  background: #ffebee;
+  color: #c62828;
+}
+
+/* 🔹 Mobile responsiveness */
+@media (max-width: 768px) {
+  #loginBox, #dashboard {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  input[type="email"], input[type="password"], button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  canvas {
+    height: 300px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #loginBox, #dashboard {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  input[type="email"], input[type="password"], button {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  canvas {
+    height: 250px !important;
+  }
+}
