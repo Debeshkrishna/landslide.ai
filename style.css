@@ -117,6 +117,24 @@ canvas {
   background: #ffebee;
   color: #c62828;
 }
+ .sensor-data {
+  background: #f5f5f5;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+}
+
+.sensor-data h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.sensor-data p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
 
 /* 🔹 Mobile responsiveness */
 @media (max-width: 768px) {
