@@ -26,6 +26,8 @@
     
   </header>
 
+
+
   <!-- Login Form -->
   <div id="loginBox">
     <h2>Admin Login</h2>
@@ -37,6 +39,17 @@
   <!-- Dashboard -->
   <div id="dashboard" style="display:none;">
     <h2>Realtime Sensor Dashboard</h2>
+<div id="sensorDataBox" class="sensor-data">
+  <h3>Live Sensor Readings</h3>
+  <p id="soilMoisture">🌱 Soil Moisture Sensor Data: 0 %</p>
+  <p id="rainSensor">🌧️ Rain Sensor Data: 0 %</p>
+</div>
+
+<!-- Existing chart -->
+<canvas id="myChart"></canvas>
+
+<!-- Alert Box -->
+<div id="alertBox" class="alert-log">Waiting for data...</div>
     <canvas id="myChart"></canvas>
     <div id="alertBox" class="alert-log"></div>
     <button id="logoutBtn" onclick="logout()">Logout</button>
