@@ -65,3 +65,69 @@ onAuthStateChanged(auth, (user) => {
     document.getElementById("loginBox").style.display = "block";
   }
 });
+// Chart Setup
+const ctx = document.getElementById('myChart').getContext('2d');
+const myChart = new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: [],
+    datasets: [
+      {
+        label: 'Soil Moisture (%)',
+        data: [],
+        borderColor: 'green',
+        fill: false
+      },
+      {
+        label: 'Rain Sensor (%)',
+        data: [],
+        borderColor: 'blue',
+        fill: false
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    animation: false
+  }
+});
+
+// Firebase Listener
+onValue(ref(db, "sensorData"), (snapshot) => {
+  const data = snapshot.val();
+
+  const soilValue = data.soilMoisture || 0;
+  const rainValue = data.rainSensor || 0;
+  const rainQuantity = data.rainQuantity || 0;
+
+  // Update chart
+  myChart.data.labels.push(new Date().toLocaleTimeString());
+  myChart.data.datasets[0].data.push(soilValue);
+  myChart.data.datasets[1].data.push(rainValue);
+  myChart.data.datasets[1].data.push(rainQuantty);
+
+  myChart.update();
+
+  // Update HTML sensor values
+  document.getElementById("soilMoisture").innerText =
+    `🌱 Soil Moisture Sensor Data: ${soilValue} %`;
+  document.getElementById("rainSensor").innerText =
+    `🌧️ Rain Sensor Data: ${rainValue} %`;
+
+document.getElementById("rainQuantity").innerText =
+    `🌧️ Rain Sensor Data: ${rainQuantity} mm`;
+  // Alerts based on soil moisture (or combined logic)
+  if (soilValue >= 80 || rainValue >= 80) {
+    sendDangerAlert(soilValue, rainValue);
+  } else if (soilValue >= 50 || rainValue >= 50) {
+    sendWarningAlert(soilValue, rainValue);
+  }
+});
+
+// Alerts
+function sendDangerAlert(soil, rain) {
+  console.log(`🚨 Danger Alert! Soil: ${soil}%, Rain: ${rain}%`);
+}
+function sendWarningAlert(soil, rain) {
+  console.log(`⚠️ Warning Alert! Soil: ${soil}%, Rain: ${rain}%`);
+}
