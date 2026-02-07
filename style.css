@@ -153,6 +153,7 @@ canvas {
 
   h2 {
     font-size: 20px;
+    text-align: center;
   }
 
   input[type="email"], input[type="password"], button {
