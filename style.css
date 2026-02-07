@@ -44,7 +44,7 @@ body {
 }
 
 /* Centered container */
-#loginBox, #dashboard {
+#loginBox {
   max-width: 400px;
   margin: 40px auto;
   padding: 25px;
@@ -52,11 +52,18 @@ body {
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-
+#dashboard {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #fef250;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
 /* Headings */
 h2 {
   text-align: center;
-  color: #2c3e50;
+  color: #fff;
   margin-bottom: 20px;
 }
 
@@ -88,12 +95,7 @@ button:hover {
   background: #2980b9;
 }
 
-/* Chart canvas */
-canvas {
-  margin-top: 20px;
-  width: 100% !important;
-  height: 400px !important;
-}
+
 
 /* Alerts (optional styling for push logs) */
 .alert-log {
@@ -127,15 +129,21 @@ canvas {
 
 .sensor-data h3 {
   margin-top: 0;
-  color: #333;
+  color: #fff;
 }
 
 .sensor-data p {
   font-size: 16px;
   margin: 5px 0;
+ color:#333;
 }
 
-
+/* Chart canvas */
+canvas {
+  margin-top: 20px;
+  width: 100% !important;
+  height: 300px !important;
+}
 /* 🔹 Mobile responsiveness */
 @media (max-width: 768px) {
   #loginBox, #dashboard {
